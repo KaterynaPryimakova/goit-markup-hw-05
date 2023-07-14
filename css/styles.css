@@ -36,6 +36,13 @@ img{
     max-width: 100%;
 }
 
+button {
+    font-family: inherit;
+    color: currentColor;
+}
+input {
+    font-family: inherit;
+}
 .lost-title {
     position: absolute;
     width: 1px;
@@ -448,6 +455,9 @@ img{
 .logo-accent-lower {
     color:var(--light-brand-color);
 }
+.footer-link-wrap{
+    margin-right: 80px;
+}
 .footer-title{
     color: var(--white);
     font-weight: 500;
@@ -482,6 +492,70 @@ img{
 .footer-social-link:hover,
 .footer-social-link:focus{
     background-color: var(--success);
+}
+
+.footer-subcribe-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 24px; */
+}
+.subscribe-label{
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+.email-input{
+    width: 264px;
+    height: 40px;
+    background-color: var(--dark-brand-color);
+    border-radius: 4px;
+    border: 1px solid var(--white);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    margin-top: 16px;
+    padding: 8px 16px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.email-input:is(:hover, :focus){
+    border-color: var(--acent-brand-color);
+}
+.email-input::placeholder{
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.email-input:is(:hover, :focus)::placeholder{
+    color: var(--acent-brand-color);
+}
+.subscribe-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: var(--white);
+    background-color: var(--acent-brand-color);
+    border: none;
+    border-radius: 4px;
+    padding: 8px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    align-self: end;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-icon{
+    fill:currentColor;
+}
+.subscribe-btn:is(:hover, :focus) {
+    background-color: var(--active-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 /**----------Portfolio*------------*/
