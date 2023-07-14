@@ -518,7 +518,7 @@ input {
     padding: 8px 16px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.email-input:is(:hover, :focus){
+.email-input:is(:hover, :focus, :active){
     border-color: var(--acent-brand-color);
 }
 .email-input::placeholder{
@@ -529,7 +529,7 @@ input {
     letter-spacing: 0.04em;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.email-input:is(:hover, :focus)::placeholder{
+.email-input:is(:hover, :focus, :active)::placeholder{
     color: var(--acent-brand-color);
 }
 .subscribe-btn{
