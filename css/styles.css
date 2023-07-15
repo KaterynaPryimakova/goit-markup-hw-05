@@ -658,7 +658,9 @@ input {
     display: flex;
     flex-direction: column;
     margin: 72px 24px 24px 24px;
-
+}
+.modal-form-callback:focus-within{
+    border-color: var(--acent-brand-color);
 }
 .form-title{
     width: 360px;
@@ -668,6 +670,7 @@ input {
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    margin-bottom: 16px;
 }
 .callback-label{
     color: var(--subtle-text);
@@ -675,6 +678,14 @@ input {
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: 0.04em;
+    margin-bottom: 4px;
+}
+.coment-text::placeholder{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.40);
 }
 .send-btn{
     color: var(--white);
@@ -707,6 +718,26 @@ input {
 .policy-link:is(:hover, :focus){
     color: var(--active-color);
 }
-.checkbox-icon{
+.input-container{
+    position: relative;
+    margin-bottom: 8px;
+}
+.icon-wrap{
+    width: 18px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    color: var(--hero-bg-color);
+}
+.callback-icon{
+    fill: currentColor;
+}
+.callback-input{
+    width: 360px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 47, 66, 0.40);
     
 }
