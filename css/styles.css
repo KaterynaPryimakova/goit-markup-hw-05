@@ -780,20 +780,22 @@ input {
     display: inline-block;
     width: 16px;
     height: 16px;
-    color: var(--light-brand-color);
-    background-color: var(--active-color);
-    border: 1px solid var(--active-color);
+    border: 1px solid rgba(46, 47, 66, 0.40);
     border-radius: 2px;
-}
-.checkbox-icon{
-    /* opacity: 0; */
-    fill: currentColor;
+    margin-right: 8px;
     
 }
-/* .checkbox-wrap:active{
-    opacity: 1;
-    color: var(--light-brand-color);
-    background-color: var(--active-color);
-    border: 1px solid var(--active-color);
-    border-radius: 2px; 
-}*/
+
+.checkbox-icon{
+    fill: currentColor;
+    opacity: 0;
+}
+.checkbox-input:checked + .checkbox-wrap::before{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 8px;
+    background-image: url(../images/icons.svg#icon-check);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
