@@ -659,9 +659,9 @@ input {
     flex-direction: column;
     margin: 72px 24px 24px 24px;
 }
-.modal-form-callback:focus-within{
+/* .modal-form-callback:focus-within{
     border-color: var(--acent-brand-color);
-}
+} */
 .form-title{
     width: 360px;
     color: var(--dark-brand-color);
@@ -686,6 +686,21 @@ input {
     line-height: 1.2;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.40);
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.coment-text{
+    margin-bottom: 16px;
+    width: 360px;
+    min-height: 120px;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 47, 66, 0.40);
+    position: relative;
+    resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .send-btn{
     color: var(--white);
@@ -705,6 +720,7 @@ input {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
 }
 .send-btn:is(:hover, :focus){
     background-color: var(--active-color);
@@ -739,5 +755,45 @@ input {
     height: 40px;
     border-radius: 4px;
     border: 1px solid rgba(46, 47, 66, 0.40);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.callback-input:is(:hover, :focus),
+.coment-text:is(:hover, :focus){
+    border-color: var(--acent-brand-color);
+}
+.coment-text:hover::placeholder,
+.coment-text:focus::placeholder{
+    color: var(--acent-brand-color);
+}
+.callback-input:is(:hover, :focus) + .icon-wrap svg{
+    fill: var(--acent-brand-color);
+}
+.icon-wrap svg{
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox-input{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.checkbox-wrap{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: var(--light-brand-color);
+    background-color: var(--active-color);
+    border: 1px solid var(--active-color);
+    border-radius: 2px;
+}
+.checkbox-icon{
+    /* opacity: 0; */
+    fill: currentColor;
     
 }
+/* .checkbox-wrap:active{
+    opacity: 1;
+    color: var(--light-brand-color);
+    background-color: var(--active-color);
+    border: 1px solid var(--active-color);
+    border-radius: 2px; 
+}*/
