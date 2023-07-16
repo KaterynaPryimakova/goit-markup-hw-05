@@ -771,31 +771,29 @@ input {
 .icon-wrap svg{
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* *----------checkbox--------- */
 .checkbox-input{
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
+    display: none;
 }
 .checkbox-wrap{
     display: inline-block;
     width: 16px;
     height: 16px;
+    color: var(--light-brand-color);
     border: 1px solid rgba(46, 47, 66, 0.40);
     border-radius: 2px;
     margin-right: 8px;
-    
+    cursor: pointer;
+    text-align: center;
 }
 
 .checkbox-icon{
     fill: currentColor;
-    opacity: 0;
+    visibility: hidden;
 }
-.checkbox-input:checked + .checkbox-wrap::before{
-    content: "";
-    display: block;
-    width: 10px;
-    height: 8px;
-    background-image: url(../images/icons.svg#icon-check);
-    background-repeat: no-repeat;
-    background-size: cover;
+.label-wrap .checkbox-input:checked + .checkbox-wrap{
+    background-color: var(--active-color);
+}
+.label-wrap .checkbox-input:checked + .checkbox-wrap .checkbox-icon{
+    visibility: visible;
 }
