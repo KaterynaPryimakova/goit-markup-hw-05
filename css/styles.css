@@ -43,7 +43,7 @@ button {
 input {
     font-family: inherit;
 }
-.visually-hidden {
+/* /* .visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -54,6 +54,10 @@ input {
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+} */
+.visually-hidden {
+    position: absolute;
+    visibility: hidden;
 }
 
 .list {
@@ -819,10 +823,10 @@ input {
     justify-content: center;
     fill: transparent;
 }
-.checkbox-input{
+/* .checkbox-input{
     visibility: hidden;
     position: absolute;
-}
+} */
 
 .checkbox-input:checked + .checkbox-label > .checkbox-wrap {
     background-color: var(--active-color);
