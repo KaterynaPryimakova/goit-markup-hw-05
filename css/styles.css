@@ -456,6 +456,7 @@ input {
     font-size: 12px;
     line-height: 1.5;
     letter-spacing: 0.04em;
+    color: var(--white);
     background-color: transparent;
     border-radius: 4px;
     border: 1px solid var(--white);
@@ -713,7 +714,7 @@ input {
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.40);
-    background-color: var(--modal-background);
+    background-color: transparent;
     border-radius: 4px;
     border: 1px solid rgba(46, 47, 66, 0.40);
     padding: 8px 16px;
@@ -818,9 +819,8 @@ input {
     fill: transparent;
 }
 
-.checkbox-input:checked + .checkbox-wrap{
+.checkbox-input:checked + .checkbox-label > .checkbox-wrap {
     background-color: var(--active-color);
     border: none;
     fill: var(--light-brand-color);
-    visibility: visible;
 }
