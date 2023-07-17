@@ -728,6 +728,7 @@ input {
 }
 .check-input-wrap{
     margin-bottom: 24px;
+    display: inline-flex;
 }
 .send-btn{
     color: var(--white);
@@ -818,9 +819,14 @@ input {
     justify-content: center;
     fill: transparent;
 }
+.checkbox-input{
+    visibility: hidden;
+    position: absolute;
+}
 
 .checkbox-input:checked + .checkbox-label > .checkbox-wrap {
     background-color: var(--active-color);
     border: none;
     fill: var(--light-brand-color);
+    visibility: visible;
 }
