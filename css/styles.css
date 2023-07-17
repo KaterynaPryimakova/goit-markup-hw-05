@@ -43,7 +43,7 @@ button {
 input {
     font-family: inherit;
 }
-.lost-title {
+.visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -448,16 +448,19 @@ input {
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    margin-bottom: 16px;
 }
 .email-input{
     width: 264px;
     height: 40px;
-    background-color: var(--dark-brand-color);
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    background-color: transparent;
     border-radius: 4px;
     border: 1px solid var(--white);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    margin-top: 16px;
-    padding: 8px 16px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    padding-left: 16px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .email-input:is(:hover, :focus, :active){
@@ -475,9 +478,12 @@ input {
     color: var(--acent-brand-color);
 }
 .subscribe-btn{
+    min-width: 165px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Roboto", sans-serif;
     gap: 16px;
     color: var(--white);
     background-color: var(--acent-brand-color);
@@ -494,6 +500,7 @@ input {
 }
 .btn-icon{
     fill:currentColor;
+    margin-left: 16px;
 }
 .subscribe-btn:is(:hover, :focus) {
     background-color: var(--active-color);
@@ -609,6 +616,7 @@ input {
 }
 
 .modal-content {
+    padding: 72px 24px 24px 24px;
     background-color: var(--modal-background);
     border-radius: 4px;
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
@@ -657,7 +665,6 @@ input {
 .modal-form-callback{
     display: flex;
     flex-direction: column;
-    margin: 72px 24px 24px 24px;
 }
 .modal-form-callback:focus-within{
     border-color: var(--acent-brand-color);
@@ -676,14 +683,18 @@ input {
     color: var(--subtle-text);
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.17;
     letter-spacing: 0.04em;
+    display: block;
     margin-bottom: 4px;
+}
+.input-icon-wrap{
+    position: relative;
 }
 .coment-text::placeholder{
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.40);
     position: absolute;
@@ -692,16 +703,30 @@ input {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
-.coment-text{
+.coment-wrap{
     margin-bottom: 16px;
-    width: 360px;
-    min-height: 120px;
+}
+.coment-text{
+    width: 100%;
+    height: 120px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.40);
     background-color: var(--modal-background);
     border-radius: 4px;
     border: 1px solid rgba(46, 47, 66, 0.40);
+    padding: 8px 16px;
+    outline: transparent;
     position: relative;
     resize: none;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.coment-text:is(:hover, :focus){
+    border-color: var(--acent-brand-color);
+}
+.check-input-wrap{
+    margin-bottom: 24px;
 }
 .send-btn{
     color: var(--white);
@@ -710,8 +735,10 @@ input {
     border-radius: 4px;
     border: none;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    width: 169px;
+    min-width: 169px;
+    height: 56px;
     display: block;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     font-size: 16px;
     font-weight: 500;
@@ -721,7 +748,6 @@ input {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
 }
 .send-btn:is(:hover, :focus){
     background-color: var(--active-color);
@@ -736,26 +762,25 @@ input {
     color: var(--active-color);
 }
 .input-container{
-    position: relative;
     margin-bottom: 8px;
 }
-.icon-wrap{
+.callback-icon{
     width: 18px;
     height: 24px;
     position: absolute;
     top: 50%;
     left: 16px;
     transform: translateY(-50%);
-    color: var(--hero-bg-color);
+    fill: var(--hero-bg-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
-.callback-icon{
-    fill: currentColor;
-}
+
 .callback-input{
-    width: 360px;
+    width: 100%;
     height: 40px;
     padding-left: 38px;
-    background-color: var(--modal-background);
+    background-color: transparent;
+    outline: transparent;
     border-radius: 4px;
     border: 1px solid rgba(46, 47, 66, 0.40);
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -768,35 +793,34 @@ input {
 .coment-text:focus::placeholder{
     color: var(--acent-brand-color);
 }
-.callback-input:is(:hover, :focus) + .icon-wrap svg{
+.callback-input:is(:hover, :focus) + .callback-icon{
     fill: var(--acent-brand-color);
 }
-.icon-wrap svg{
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-/* *----------checkbox--------- */
-.checkbox-input{
-    display: none;
-}
-.checkbox-wrap{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    color: var(--light-brand-color);
-    border: 1px solid rgba(46, 47, 66, 0.40);
-    border-radius: 2px;
-    margin-right: 8px;
-    cursor: pointer;
-    text-align: center;
+
+.checkbox-label{
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--subtle-text);
 }
 
-.checkbox-icon{
-    fill: currentColor;
-    visibility: hidden;
+.checkbox-wrap{
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.40);
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
 }
-.label-wrap .checkbox-input:checked + .checkbox-wrap{
+
+.checkbox-input:checked + .checkbox-wrap{
     background-color: var(--active-color);
-}
-.label-wrap .checkbox-input:checked + .checkbox-wrap .checkbox-icon{
+    border: none;
+    fill: var(--light-brand-color);
     visibility: visible;
 }
