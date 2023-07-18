@@ -402,7 +402,7 @@ input {
     color:var(--light-brand-color);
 }
 .footer-link-wrap{
-    margin-right: 80px;
+    margin-right: auto;
 }
 .footer-title{
     color: var(--white);
